@@ -76,9 +76,7 @@ input::placeholder {
     opacity: 0.5;
 }
 /*Positioning*/
-.text {
-    width: 445px;
-}
+
 /*Desktop and tablet*/
 @media screen and (min-width: 600px) {
     body {
@@ -106,6 +104,9 @@ input::placeholder {
     }
     .bg-pattern {
         position: absolute;
+    }
+    .text {
+        width: 445px;
     }
     button {
         width: 162px;
@@ -159,7 +160,7 @@ input::placeholder {
         position: absolute;
         top: 50px;
     }
-    h1 {
+    .title {
         font-size: 48px;
         line-height: 56px;
     }
@@ -171,5 +172,65 @@ input::placeholder {
     .bg-pattern {
         bottom: -250px;
         left: 0px;
+    }
+}
+/*Mobile*/
+@media screen and (max-width: 599px) {
+    body {
+        height: 100vh;
+        font-size: 15px;
+        line-height: 25px;
+        text-align: center;
+        background-image: linear-gradient(
+                hsla(224, 35%, 11%, 0.85),
+                hsla(224, 35%, 11%, 0.85)
+            ),
+            url("../mobile/image-host.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .logo {
+        margin: 60px auto;
+    }
+    .title {
+        font-size: 26px;
+        line-height: 38px;
+    }
+    .bg-pattern {
+        display: none;
+    }
+    .gallery > img {
+        max-height: 17px;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    form {
+        order: 2;
+    }
+    form > * {
+        width: 80%;
+        height: 46px;
+        margin-bottom: 10px;
+    }
+    input {
+        padding-left: 15px;
+    }
+    input::placeholder {
+        color: var(--gray);
+    }
+    /*Izmenio sam invalid klasu zbog bolje vidljivosti*/
+    .invalid {
+        order: 3;
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 700;
+    }
+}
+@media screen and (max-height: 500px) {
+    body {
+        height: 150vh;
     }
 }
