@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap");
+:root {
+    font-size: 14px;
+    font-family: "Chivo";
+    --green: #54e6af;
+    --black: #121725;
+    --white: #ffffff;
+    --gray: #c2cbe5;
+    --dark: #2c344b;
+    --light: #5a668a;
+    --light-transparent: hsla(225, 21%, 45%, 0.7);
+    --shadow-color: rgba(84, 230, 175, 0.2);
+    --button-hover: #b3ffe2;
+    --red: #fb3e3e;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+/*Font*/
+.title {
+    font-family: "Chivo";
+    font-size: 52px;
+    line-height: 62px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--white);
+}
+.title::first-line {
+    color: var(--green);
+}
+body {
+    font-family: "Chivo";
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+    color: var(--gray);
+    background: var(--black);
+}
+button {
+    background-color: var(--green);
+    color: var(--black);
+    font-family: "Chivo";
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 700;
+    box-shadow: 0px 25px 20px -20px var(--shadow-color);
+    border-radius: 28px;
+    border: none;
+}
+button:hover {
+    background-color: var(--button-hover);
+    cursor: pointer;
+}
+input[type="email"] {
+    background: var(--dark);
+    border-radius: 28px;
+    color: var(--white);
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    border: none;
+}
+input::placeholder {
+    color: var(--gray);
+}
+.error {
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--red);
+}
+.gallery > img {
+    opacity: 0.75;
+}
+form {
+    background: var(--dark);
+    border-radius: 28px;
+    padding: 5px;
+}
+/*Positioning*/
+/*Desktop*/
+@media screen and (min-width: 800px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100vh;
+    }
+    .container {
+        width: 90%;
+        height: 85%;
+        background-position: 100% 100%;
+        background-image: url("../desktop/image-host.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    main {
+        width: 60%;
+        background: var(--black);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+    }
+    .logo {
+        position: absolute;
+        top: -28px;
+        left: 0;
+    }
+    .text {
+        width: 65%;
+    }
+    button {
+        width: 162px;
+        height: 46px;
+    }
+    form {
+        width: 427px;
+        display: grid;
+        grid-template-columns: 1fr 162px;
+    }
+    input[type="email"] {
+        padding-left: 15px;
+    }
+}
