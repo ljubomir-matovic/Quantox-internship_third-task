@@ -19,6 +19,6 @@ const validationFailed = (e) => {
         form.submit();
 };
 mail.addEventListener("invalid", validationFailed);
-mail.addEventListener("blur", validate);
+mail.addEventListener("blur", (e) => { if(mail.value!=='') validate(); else  message.style.display = "none";});
 button.addEventListener("keypress", clickHandler);
 form.addEventListener("submit", submitHandler);
