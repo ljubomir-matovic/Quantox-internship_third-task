@@ -7,14 +7,33 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   
   <title>Pod request access landing page</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+  <section class="container">
+    <img src="./assets/desktop/logo.svg" alt="logo" class="logo">
+    <main>
+      <h1 class="title"><span class="first-line">Publish your podcasts</span><br/>everywhere.</h1>
+      <p class="text">Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, 
+      Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
+    <form>
+      <input type="email" name="mail" placeholder="Email address" required>
+      <button><p>Request access</p></button>
+    </form>
+    <p class="invalid">
+      Oops! Please check your email!
+    </p>
+    <section class="gallery">
+      <img src="./assets/desktop/spotify.svg" alt="Spotify">
+      <img src="./assets/desktop/apple-podcast.svg" alt="Apple podcast">
+      <img src="./assets/desktop/google-podcasts.svg" alt="Google podcast">
+      <img src="./assets/desktop/pocket-casts.svg" alt="Pocket cast">
+    </section>
+    </main>
+    <img src="./assets/desktop/bg-pattern-dots.svg" alt="bg pattern dots" class="bg-pattern">
+  </section>
+
   <noscript>Please enable JavaScript!</noscript>
-  Publish your podcasts everywhere.
-
-  Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, 
-  Apple Podcasts, Google Podcasts, Pocket Casts and more!
-
-  Request access
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>

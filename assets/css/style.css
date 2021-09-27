@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700&display=swap");
+:root {
+    font-size: 14px;
+    --green: #54e6af;
+    --black: #121725;
+    --white: #ffffff;
+    --gray: #c2cbe5;
+    --dark: #2c344b;
+    --light: #5a668a;
+    --light-transparent: hsla(225, 21%, 45%, 0.7);
+    --shadow-color: rgba(84, 230, 175, 0.2);
+    --button-hover: #b3ffe2;
+    --red: #fb3e3e;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+/*Font*/
+.title {
+    font-family: "Chivo";
+    font-size: 52px;
+    line-height: 62px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--white);
+}
+.first-line {
+    /*napravio sam novu klasu jer .title::first-line ne "hvata uvek ono sto treba"*/
+    color: var(--green);
+}
+body {
+    font-family: "Chivo";
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+    color: var(--gray);
+    background: var(--black);
+}
+button {
+    background-color: var(--green);
+    color: var(--black);
+    font-family: "Chivo";
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 700;
+    box-shadow: 0px 25px 20px -20px var(--shadow-color);
+    border-radius: 28px;
+    border: none;
+}
+button:hover {
+    background-color: var(--button-hover);
+    cursor: pointer;
+}
+input[type="email"] {
+    background: var(--dark);
+    border-radius: 28px;
+    color: var(--white);
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+}
+input::placeholder {
+    color: var(--gray);
+}
+.invalid {
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--red);
+    display: none;
+}
+.gallery > img {
+    opacity: 0.5;
+}
+/*Positioning*/
+
+/*Desktop and tablet*/
+@media screen and (min-width: 600px) {
+    body {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .container {
+        width: 90%;
+        background-position: 100% 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    main {
+        background: var(--black);
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .logo {
+        position: absolute;
+    }
+    .bg-pattern {
+        position: absolute;
+    }
+    .text {
+        width: 445px;
+    }
+    button {
+        width: 162px;
+        height: 46px;
+    }
+    form {
+        background: var(--dark);
+        border-radius: 28px;
+        padding: 5px;
+        width: 427px;
+        display: grid;
+        grid-template-columns: 1fr 162px;
+        column-gap: 5px;
+    }
+    input[type="email"] {
+        padding-left: 15px;
+    }
+}
+/*Desktop*/
+@media screen and (min-width: 1024px) {
+    body {
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        height: 80%;
+        background-image: url("../desktop/image-host.jpg");
+    }
+    main {
+        width: 723px;
+    }
+    .logo {
+        top: -28px;
+        left: 0;
+    }
+    .bg-pattern {
+        bottom: -52px;
+        right: 0;
+    }
+}
+
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+    .container {
+        width: 95%;
+        height: 80vh;
+        min-height: 767px;
+        background-image: url("../tablet/image-host.jpg");
+    }
+    .logo {
+        position: absolute;
+        top: 50px;
+    }
+    .title {
+        font-size: 48px;
+        line-height: 56px;
+    }
+    main {
+        padding-top: 100px;
+        width: 90%;
+        max-height: 50%;
+    }
+    .bg-pattern {
+        bottom: -250px;
+        left: 0px;
+    }
+}
+/*Mobile*/
+@media screen and (max-width: 599px) {
+    body {
+        height: 100vh;
+        font-size: 15px;
+        line-height: 25px;
+        text-align: center;
+        background-image: linear-gradient(
+                hsla(224, 35%, 11%, 0.85),
+                hsla(224, 35%, 11%, 0.85)
+            ),
+            url("../mobile/image-host.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .logo {
+        margin: 60px auto;
+    }
+    .title {
+        font-size: 26px;
+        line-height: 38px;
+    }
+    .bg-pattern {
+        display: none;
+    }
+    .gallery > img {
+        max-height: 17px;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    form {
+        order: 2;
+    }
+    form > * {
+        width: 80%;
+        height: 46px;
+        margin-bottom: 10px;
+    }
+    input {
+        padding-left: 15px;
+    }
+    input::placeholder {
+        color: var(--gray);
+    }
+    /*Izmenio sam invalid klasu zbog bolje vidljivosti*/
+    .invalid {
+        order: 3;
+        font-size: 15px;
+        line-height: 25px;
+        font-weight: 700;
+    }
+}
+@media screen and (max-height: 500px) {
+    body {
+        height: 150vh;
+    }
+}
